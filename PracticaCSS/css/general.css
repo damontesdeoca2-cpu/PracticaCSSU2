@@ -1,0 +1,333 @@
+/* ==========================================================================
+   1. CONFIGURACIÓN GLOBAL Y RESET
+   ========================================================================== */
+
+/* Hace que los paddings y bordes no sumen ancho extra a los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Limpia los márgenes del navegador y asegura el ancho completo */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: #161417; /* Fondo oscuro general */
+}
+
+
+/* ==========================================================================
+   2. ENCABEZADO (HEADER) Y NAVEGACIÓN (NAV)
+   ========================================================================== */
+
+/* Bloque del encabezado principal */
+header {
+    background-color: #161417;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Enlaces que estén específicamente dentro del header */
+header a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+/* Párrafos que estén únicamente dentro del header */
+header p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* Botones/Enlaces del menú de navegación */
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: #340b4d; /* Fondo morado para los botones */
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Efecto cuando el usuario pasa el mouse sobre los enlaces del nav */
+nav a:hover {
+    background-color: #e4d3ec;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* ==========================================================================
+   3. CONTENIDO ESTRUCTURAL (ASIDE Y MAIN)
+   ========================================================================== */
+
+/* Bloque lateral de información secundaria (Dato Adicional) */
+aside {
+    color: #000000;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Bloque de contenido principal de la página */
+main {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000;            /* Texto negro para contrastar */
+    width: 100%;
+    padding: 20px;
+}
+
+
+/* ==========================================================================
+   4. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+
+/* Bloque del pie de página */
+footer {
+    background-color: #161417;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    padding: 20px 10px;
+    margin-top: 30px; /* Despega el footer del contenido de arriba */
+}
+
+/* Párrafos que estén únicamente dentro del footer */
+footer p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+
+/* ==========================================================================
+   5. TEXTOS Y ETIQUETAS GENERALES
+   ========================================================================== */
+
+/* Enlaces generales de la página */
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* Textos dentro de etiquetas span */
+span {
+    color: #FFFFFF;
+}
+
+/* Título principal (Ej: Mi perfil profesional) */
+h1 {
+    margin: 0;
+    font-size: 34px;
+    text-align: center;
+}
+
+/* Títulos de secciones (Ej: Sobre mí, Objetivos, etc.) */
+h2 {
+    margin: 0;
+    font-size: 28px;
+    text-align: center;
+    border-bottom: 2px solid #340b4d; /* Línea decorativa morada abajo del título */
+    padding-bottom: 10px;
+}
+
+/* Títulos de tercer nivel */
+h3 {
+    color: rgb(14, 14, 14);
+}
+
+section, article, aside{
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+}
+
+/* Bloque 7*/
+
+aside{
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    background-color: #d47eff;
+}
+
+aside i{
+    color: white;
+    margin-right: 8px;
+    font-size: 30px;
+}
+
+aside i:hover{
+    color: #000000;
+    transition: 1,5ms;
+}
+
+/* Bloque 8*/
+
+img, video, iframe {
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+figure{
+    text-align: center;
+    margin: 0;
+}
+
+figcaption{
+    font-size: 14px;
+    color:#555555;
+    margin-top: 8px;
+}
+
+/*Bloque 9*/
+
+ul, ol{
+    padding-left: 20px;
+}
+
+li{
+    margin-bottom: 6px;
+}
+
+/*Bloque 10*/
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+caption{
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+th{
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+}
+
+td{
+    padding: 10px;
+    border: 1px solid #cccccc;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+/*Formularios*/
+
+form{
+    margin-top: 12px;
+}
+
+label{
+    font-weight: bold;
+}
+
+input, select, textarea{
+    width: 100%;
+    padding: 9px;
+    margin-top: 5px;
+    border: 1px solid #a8a8a7;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+input[type="checkbox"],
+input[type="radius"]{
+    width: auto;
+    margin-right: 6px;
+}
+
+textarea{
+    resize: vertical;
+}
+
+button{
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: #0d1910;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline: 2px solid #340b4d;
+    border-color: darkblue;
+}
+
+input:required,
+select:required,
+textarea:required{
+    border-left: 5px solid darkblue;
+}
+
+/*Bloque 11*/
+
+details{
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    margin-bottom: 10px;
+}
+
+summary{
+    cursor: pointer;
+    font-weight: bold;
+    color: darkblue;
+}
+
+progress, meter{
+    width: 260px;
+    height: 20px;
+}
+
+/*Bloque 12, texto técnico*/
+
+code{
+    background-color: #eeeeee;
+    color: #b00020;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+pre{
+    background-color: #0d1910;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+kbd{
+    background-color: #222222;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 6px;
+}
