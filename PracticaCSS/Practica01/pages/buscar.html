@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Búsqueda de información</title>
 
-    <!-- Como este archivo está dentro de pages, se sube un nivel con ../ -->
     <link rel="icon" href="../img/mundito.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -19,19 +18,20 @@
     <header>
         <h1>Búsqueda de información</h1>
         <p>Esta página recibe datos enviados desde los formularios usando el método GET.</p>
+        
         <nav>
-        <a href="../index.html">
-            <i class="fa-solid fa-house"></i>
-            Inicio
-        </a>
+            <a class="classbtn" id="inicio" href="../index.html">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
 
-        <a href="buscar.html">Buscar</a>
+            <a class="classbtn" id="buscar" href="buscar.html">Buscar</a>
 
-        <a href="cto/contacto.html">
-            <i class="fa-solid fa-envelope"></i>
-            Contacto
-        </a>
-    </nav>
+            <a class="classbtn" id="contacto" href="cto/contacto.html">
+                <i class="fa-solid fa-envelope"></i>
+                Contacto
+            </a>
+        </nav>
     </header>
 
     <main>
@@ -39,7 +39,7 @@
         <section>
             <h2>¿Qué ocurre en esta página?</h2>
 
-            <p>
+            <p class="nota">
                 Cuando un formulario usa el método <code>GET</code>, los datos enviados aparecen
                 en la barra de direcciones del navegador.
             </p>
@@ -191,5 +191,4 @@ buscar.html?tema=html&correo=estudiante@ejemplo.com
     </footer>
 
 </body>
-
 </html>

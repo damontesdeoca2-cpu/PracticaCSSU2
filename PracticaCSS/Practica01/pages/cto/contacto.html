@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <title>Contacto</title>
 
-    <!-- Como este archivo está en pages/cto, se suben dos niveles con ../../ -->
     <link rel="icon" href="../../img/mundito.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../../../css/contacto.css">
     <link rel="stylesheet" href="../../../css/general.css">
-
 </head>
 
 <body>
@@ -19,68 +17,60 @@
     <header>
         <h1>Mi perfil de contacto</h1>
         <p>Información de contacto y formulario básico en HTML.</p>
+        
         <nav>
-            <a href="../../index.html">
+            <a class="classbtn" id="inicio" href="../../index.html">
                 <i class="fa-solid fa-house"></i>
                 Inicio
             </a>
 
-            <a href="../../index.html#objetivo">Objetivo</a>
+            <a class="classbtn" id="objetivo" href="../../index.html#objetivo-section">Objetivo</a>
 
-            <a href="../../index.html#intereses">Intereses</a>
+            <a class="classbtn" id="intereses" href="../../index.html#intereses-section">Intereses</a>
 
-            <a href="../buscar.html">Buscar</a>
+            <a class="classbtn" id="buscar" href="../buscar.html">Buscar</a>
 
-            <a href="contacto.html">
+            <a class="classbtn" id="contacto" href="contacto.html">
                 <i class="fa-solid fa-envelope"></i>
                 Contacto
             </a>
         </nav>
-
     </header>
-
-
 
     <main>
 
         <section>
             <h2>Datos de contacto</h2>
 
-            <p>
+            <p class="nota">
                 Esta página permite practicar enlaces, formularios, rutas relativas,
                 etiquetas semánticas y datos de contacto.
             </p>
 
             <address>
-                Geovanny Brito Casanova<br>
+                <strong>Geovanny Brito Casanova</strong><br>
                 Ecuador<br>
-                Correo: contacto@ejemplo.com<br>
+                Contacto académico: <a href="mailto:contacto@ejemplo.com" style="color: darkblue; text-decoration: underline;">contacto@ejemplo.com</a><br>
                 Teléfono: 0999999999
             </address>
         </section>
 
-        <section>
+        <section id="interes">
             <h2>Redes sociales</h2>
-
             <ul>
                 <li>
-                    <a href="https://www.facebook.com/" target="_blank">
-                        <i class="fa-brands fa-facebook" style="color: white;"></i>
-
+                    <a href="https://www.facebook.com/" target="_blank" style="color: #340b4d; font-weight: bold;">
+                        <i class="fa-brands fa-facebook" style="color: #1877F2; font-size: 20px; margin-right: 8px;"></i> Facebook
                     </a>
                 </li>
-
                 <li>
-                    <a href="https://www.instagram.com/" target="_blank">
-                        <i class="fa-brands fa-instagram" style="color: white;"></i>
-
+                    <a href="https://www.instagram.com/" target="_blank" style="color: #340b4d; font-weight: bold;">
+                        <i class="fa-brands fa-instagram" style="color: #E1306C; font-size: 20px; margin-right: 8px;"></i> Instagram
                     </a>
                 </li>
-
                 <li>
-                    <a href="https://www.youtube.com/" target="_blank">
-                        <i class="fa-brands fa-youtube" style="color: white;"></i>
-
+                    <a href="https://www.youtube.com/" target="_blank" style="color: #340b4d; font-weight: bold;">
+                        <i class="fa-brands fa-youtube" style="color: #FF0000; font-size: 20px; margin-right: 8px;"></i> YouTube
                     </a>
                 </li>
             </ul>
@@ -88,11 +78,6 @@
 
         <section>
             <h2>Formulario de contacto</h2>
-
-            <!-- 
-                Este formulario se envía hacia buscar.html para practicar rutas relativas.
-                Desde pages/cto/contacto.html se sube un nivel con ../
-            -->
             <form method="GET" action="../buscar.html">
 
                 <label for="nombre">Nombre completo:</label>
@@ -117,8 +102,7 @@
                 <br><br>
 
                 <label for="mensaje">Mensaje:</label>
-                <br>
-                <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje" rows="5" cols="40" required
+                <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje" rows="5" required
                     minlength="10"></textarea>
 
                 <br><br>
@@ -129,12 +113,10 @@
                 <br><br>
 
                 <p>Preferencia de respuesta:</p>
-
                 <label>
                     <input type="radio" name="respuesta" value="correo" required>
                     Correo
                 </label>
-
                 <label>
                     <input type="radio" name="respuesta" value="telefono">
                     Teléfono
@@ -150,11 +132,10 @@
                 <br><br>
 
                 <button type="submit">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    Enviar
+                    <i class="fa-solid fa-paper-plane"></i> Enviar
                 </button>
 
-                <button type="reset">
+                <button type="reset" style="background-color: #555555; margin-left: 10px;">
                     Limpiar
                 </button>
             </form>
@@ -163,7 +144,7 @@
         <section>
             <h2>Validación de contraseña</h2>
 
-            <p>
+            <p class="nota">
                 Este ejemplo permite practicar atributos como <code>required</code>,
                 <code>minlength</code>, <code>maxlength</code> y <code>pattern</code>.
             </p>
@@ -171,7 +152,6 @@
             <form method="GET" action="../buscar.html">
 
                 <label for="password">Contraseña segura:</label>
-
                 <input type="password" id="password" name="password" required minlength="8" maxlength="15"
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,15}$"
                     placeholder="Entre 8 y 15 caracteres"
@@ -191,5 +171,4 @@
     </footer>
 
 </body>
-
 </html>

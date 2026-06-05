@@ -2,12 +2,10 @@
    1. CONFIGURACIÓN GLOBAL Y RESET
    ========================================================================== */
 
-/* Hace que los paddings y bordes no sumen ancho extra a los elementos */
 * {
     box-sizing: border-box;
 }
 
-/* Limpia los márgenes del navegador y asegura el ancho completo */
 html, body {
     margin: 0;
     padding: 0;
@@ -16,12 +14,10 @@ html, body {
     background-color: #161417; /* Fondo oscuro general */
 }
 
-
 /* ==========================================================================
    2. ENCABEZADO (HEADER) Y NAVEGACIÓN (NAV)
    ========================================================================== */
 
-/* Bloque del encabezado principal */
 header {
     background-color: #161417;
     color: #FFFFFF;
@@ -33,7 +29,6 @@ header {
     align-items: center;
 }
 
-/* Enlaces que estén específicamente dentro del header */
 header a {
     color: #000000;
     text-decoration: none;
@@ -41,112 +36,65 @@ header a {
     font-size: 18px;
 }
 
-/* Párrafos que estén únicamente dentro del header */
 header p {
     font-size: 16px;
     text-align: justify;
 }
 
-/* Botones/Enlaces del menú de navegación */
-nav a {
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Botones del menú de navegación (Estado Normal) */
+nav a.classbtn {
     color: #FFFFFF;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 5px;
     font-size: 18px;
     border-radius: 10px;
     padding: 10px 20px;
-    background-color: #340b4d; /* Fondo morado para los botones */
-    flex-wrap: wrap;
-    gap: 12px;
+    background-color: #340b4d; /* Fondo morado base */
+    
+    /* Base transparente para evitar saltos en la animación */
+    border-bottom: 6px solid transparent; 
+    
+    /* Transición fluida de elevación y colores en 0.25 segundos */
+    transition: transform 0.25s ease, border-bottom-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Efecto cuando el usuario pasa el mouse sobre los enlaces del nav */
-nav a:hover {
+/* Animación Hover global de los botones del Menú */
+nav a.classbtn:hover {
     background-color: #e4d3ec;
+    color: #000000;
     text-decoration: none;
-    color: black;
+    transform: translateY(-5px); /* Se eleva 5px de forma fluida */
 }
+
+/* Colores específicos de los bordes 3D al hacer Hover */
+#inicio:hover { border-bottom-color: #dbc412; }
+#objetivo:hover { border-bottom-color: rgb(25, 25, 215); }
+#intereses:hover { border-bottom-color: #dba112; }
+#multimedia:hover { border-bottom-color: #28e357; }
+#buscar:hover { border-bottom-color: #a212db; }
+#contacto:hover { border-bottom-color: #fef3d8; }
 
 
 /* ==========================================================================
    3. CONTENIDO ESTRUCTURAL (ASIDE Y MAIN)
    ========================================================================== */
 
-/* Bloque lateral de información secundaria (Dato Adicional) */
-aside {
-    color: #000000;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Bloque de contenido principal de la página */
 main {
-    background-color: #ffffff; /* Fondo blanco */
-    color: #000000;            /* Texto negro para contrastar */
+    background-color: #ffffff; 
+    color: #000000;            
     width: 100%;
     padding: 20px;
 }
 
-
-/* ==========================================================================
-   4. PIE DE PÁGINA (FOOTER)
-   ========================================================================== */
-
-/* Bloque del pie de página */
-footer {
-    background-color: #161417;
-    color: #FFFFFF;
-    text-align: center;
-    width: 100%;
-    padding: 20px 10px;
-    margin-top: 30px; /* Despega el footer del contenido de arriba */
-}
-
-/* Párrafos que estén únicamente dentro del footer */
-footer p {
-    font-size: 16px;
-    text-align: justify;
-}
-
-
-/* ==========================================================================
-   5. TEXTOS Y ETIQUETAS GENERALES
-   ========================================================================== */
-
-/* Enlaces generales de la página */
-a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-/* Textos dentro de etiquetas span */
-span {
-    color: #FFFFFF;
-}
-
-/* Título principal (Ej: Mi perfil profesional) */
-h1 {
-    margin: 0;
-    font-size: 34px;
-    text-align: center;
-}
-
-/* Títulos de secciones (Ej: Sobre mí, Objetivos, etc.) */
-h2 {
-    margin: 0;
-    font-size: 28px;
-    text-align: center;
-    border-bottom: 2px solid #340b4d; /* Línea decorativa morada abajo del título */
-    padding-bottom: 10px;
-}
-
-/* Títulos de tercer nivel */
-h3 {
-    color: rgb(14, 14, 14);
-}
-
-section, article, aside{
+section, article {
     background-color: white;
     padding: 20px;
     margin-bottom: 10px;
@@ -154,94 +102,150 @@ section, article, aside{
     border-radius: 10px;
 }
 
-/* Bloque 7*/
-
-aside{
+/* Bloque Lateral Unificado */
+aside {
+    color: #000000;
     width: 90%;
     max-width: 1100px;
     margin: 20px auto;
+    padding: 20px;
+    text-align: center;
     background-color: #d47eff;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
 }
 
-aside i{
+aside i {
     color: white;
     margin-right: 8px;
     font-size: 30px;
+    transition: color 0.15s ease; /* Corrección de sintaxis realizada (0.15s) */
 }
 
-aside i:hover{
+aside i:hover {
     color: #000000;
-    transition: 1,5ms;
 }
 
-/* Bloque 8*/
+/* ==========================================================================
+   4. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+
+footer {
+    background-color: #161417;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    padding: 20px 10px;
+    margin-top: 30px; 
+}
+
+footer p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* ==========================================================================
+   5. TEXTOS, TABLAS Y FORMULARIOS
+   ========================================================================== */
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+span {
+    color: #FFFFFF;
+}
+
+h1 {
+    margin: 0;
+    font-size: 34px;
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+    font-size: 28px;
+    text-align: center;
+    border-bottom: 2px solid #340b4d; 
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: rgb(14, 14, 14);
+}
+
+.multimedias h3 {
+    color: #3514b8;
+}
 
 img, video, iframe {
     border-radius: 10px;
     max-width: 100%;
 }
 
-figure{
+figure {
     text-align: center;
     margin: 0;
 }
 
-figcaption{
+figcaption {
     font-size: 14px;
-    color:#555555;
+    color: #555555;
     margin-top: 8px;
 }
 
-/*Bloque 9*/
-
-ul, ol{
+ul, ol {
     padding-left: 20px;
 }
 
-li{
+li {
     margin-bottom: 6px;
 }
 
-/*Bloque 10*/
+#intereses li, #pasos li {
+    background-color: #dbdbdb;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 6px;
+}
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
     background-color: white;
 }
 
-caption{
+caption {
     font-weight: bold;
     margin-bottom: 10px;
     color: #000000;
 }
 
-th{
+th {
     background-color: darkblue;
     color: white;
     padding: 10px;
 }
 
-td{
+td {
     padding: 10px;
     border: 1px solid #cccccc;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-/*Formularios*/
-
-form{
+form {
     margin-top: 12px;
 }
 
-label{
+label {
     font-weight: bold;
 }
 
-input, select, textarea{
+input, select, textarea {
     width: 100%;
     padding: 9px;
     margin-top: 5px;
@@ -251,16 +255,16 @@ input, select, textarea{
 }
 
 input[type="checkbox"],
-input[type="radius"]{
+input[type="radio"] { /* Corrección de tipo de atributo realizada */
     width: auto;
     margin-right: 6px;
 }
 
-textarea{
+textarea {
     resize: vertical;
 }
 
-button{
+button {
     background-color: darkblue;
     color: white;
     border: none;
@@ -270,26 +274,20 @@ button{
     font-weight: bold;
 }
 
-button:hover{
+button:hover {
     background-color: #0d1910;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
+input:focus, select:focus, textarea:focus {
     outline: 2px solid #340b4d;
     border-color: darkblue;
 }
 
-input:required,
-select:required,
-textarea:required{
+input:required, select:required, textarea:required {
     border-left: 5px solid darkblue;
 }
 
-/*Bloque 11*/
-
-details{
+details {
     background-color: #ffffff;
     padding: 12px;
     border-radius: 8px;
@@ -297,27 +295,25 @@ details{
     margin-bottom: 10px;
 }
 
-summary{
+summary {
     cursor: pointer;
     font-weight: bold;
     color: darkblue;
 }
 
-progress, meter{
+progress, meter {
     width: 260px;
     height: 20px;
 }
 
-/*Bloque 12, texto técnico*/
-
-code{
+code {
     background-color: #eeeeee;
     color: #b00020;
     padding: 2px 5px;
     border-radius: 4px;
 }
 
-pre{
+pre {
     background-color: #0d1910;
     color: white;
     padding: 15px;
@@ -325,9 +321,98 @@ pre{
     overflow-x: auto;
 }
 
-kbd{
+kbd {
     background-color: #222222;
     color: white;
     padding: 3px 6px;
     border-radius: 6px;
+}
+
+main figure{
+    padding: 15px;
+    border: 1px solidd #dddddd;
+    background-color: #f4f6f8;
+    border-radius: 10px;
+}
+
+section form{
+    padding: 15px;
+    border: 1px solidd #dddddd;
+    background-color: #f4f6f8;
+    border-radius: 10px;
+}
+
+.nota{
+    background-color: #fff8e6;
+    border-left: 5px solid #dba112;
+    padding: 12px;
+    font: size 15px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (PANTALLAS DE 700PX O MENOS)
+   ========================================================================== */
+
+@media screen and (max-width: 700px) {
+    
+    /* El menú cambia de filas a columnas para que los botones no se aplasten */
+    nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        padding: 5px;
+    }
+
+    /* Los botones ocupan el ancho completo y ajustan su tamaño */
+    nav a.classbtn {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* Al estar en vertical, cambiamos la animación para que se mueva a la derecha en vez de hacia arriba */
+    nav a.classbtn:hover {
+        transform: translateX(5px); 
+    }
+
+    /* Reducimos los márgenes del contenedor lateral para que no use espacio innecesario */
+    aside {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    /* El contenedor principal reduce su relleno para aprovechar la pantalla del móvil */
+    main {
+        padding: 10px;
+    }
+
+    /* Las secciones reducen su espaciado interno */
+    section, article {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Achicamos un poco los títulos para que no se corten en pantallas pequeñas */
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    /* Ajustamos los elementos multimedia (videos/iframes) al 100% real del ancho disponible */
+    video, iframe {
+        width: 100% !important;
+        height: auto !important; /* Mantiene la proporción del video */
+    }
+    
+    /* Forzamos a que las celdas de la tabla se adapten de forma más fluida */
+    table, thead, tbody, th, td, tr {
+        font-size: 14px;
+        padding: 6px;
+    }
 }
